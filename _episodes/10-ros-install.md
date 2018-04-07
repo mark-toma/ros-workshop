@@ -29,7 +29,7 @@ Installing ROS [fetched from ROS Wiki on xx/xx/xxxx](http://wiki.ros.org/).
    sudo apt-key adv--keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key421C365BD9FF1F717815A3895523BAEEB01FA116
    ```
 
-   If you experienceissues connecting to the keyserver, you can try substitutinghkp://pgp.mit.edu:80 or  	hkp://keyserver.ubuntu.com:80 in the previous command.
+   If you experienceissues connecting to the keyserver, you can try substituting `hkp://pgp.mit.edu:80` or `hkp://keyserver.ubuntu.com:80` in the previous command.
 
 3. Installation
 
@@ -45,7 +45,7 @@ Installing ROS [fetched from ROS Wiki on xx/xx/xxxx](http://wiki.ros.org/).
    sudo apt-get install ros-kinetic-desktop-full
    ```
 
-4. Initialize rosdep
+4. Initialize `rosdep`
 
    Before you can use ROS, you will need to initialize `rosdep`. `rosdep` enables you to easily install system dependencies for source you want to compile and is required to run some core components in ROS.
 
@@ -71,7 +71,7 @@ Installing ROS [fetched from ROS Wiki on xx/xx/xxxx](http://wiki.ros.org/).
    ```
 
    If everything has worked correctly, you should see a handful of values (showing values for
-   environment variables like ROS_DISTRO and ROS_PACKAGE_PATH) as the output
+   environment variables like `ROS_DISTRO` and `ROS_PACKAGE_PATH`) as the output
    from this command. If setup.bash has not been run, then the output of this command
    will usually be empty
 
