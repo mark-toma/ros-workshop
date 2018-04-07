@@ -23,6 +23,7 @@ The Robotics Operating System is not an operating system in the way that Windows
    ```
    sudo apt-get install ros-indigo-turtlesim
    ```
+   {: .bash}
 
 2. **Starting TurtleSim** 
 
@@ -33,6 +34,7 @@ The Robotics Operating System is not an operating system in the way that Windows
    rosrun turtlesim turtlesim_node
    rosrun turtlesim turtle_teleop_key
    ```
+   {: .bash}
 
    This window shows a simulated, turtle-shaped robot that lives in a square world. If you give your third terminal (the one executing the `turtle_teleop_key` command) the input focus and press the Up, Down, Left, or Right keys, the turtle will move in response to your commands, leaving a trail behind it.
 
@@ -50,6 +52,7 @@ The Robotics Operating System is not an operating system in the way that Windows
    ```
    rospack list
    ```
+   {: .bash}
 
    Each package is defined by a **manifest**, which is a file called `package.xml`. This file
    defines some details about the package, including its name, version, maintainer, and dependencies.
@@ -60,6 +63,7 @@ The Robotics Operating System is not an operating system in the way that Windows
    ```
    rospack find <package-name>
    ```
+   {: .bash}
 
 4. **The ROS Master**
 
@@ -68,6 +72,7 @@ The Robotics Operating System is not an operating system in the way that Windows
    ```
    roscore
    ```
+   {: .bash}
 
     You should allow the master to continue running for the entire time that you’re using
    ROS. One reasonable workflow is to start `roscore` in one terminal, then open other terminals
@@ -86,12 +91,14 @@ The Robotics Operating System is not an operating system in the way that Windows
    ```
    rosrun <package-name> <executable-name>
    ```
+   {: .bash}
 
    ROS provides a few ways to get information about the nodes that are running at any particular time. To get a list of running nodes, try this command:
 
    ```
    rosnode list
    ```
+   {: .bash}
 
    You’ll see a list of three nodes:
 
@@ -100,6 +107,7 @@ The Robotics Operating System is not an operating system in the way that Windows
    /teleop_turtle
    /turtlesim
    ```
+   {: .output}
 
    The /rosout node is a special node that is started automatically by `roscore`. Its purpose is somewhat similar to the standard output (i.e. `std::cout`) that you might use in a console program.
 
@@ -108,6 +116,7 @@ The Robotics Operating System is not an operating system in the way that Windows
    ```
    rosnode info <node-name>
    ```
+   {: .bash}
 
    The output includes a list of topics for which that node is a **publisher** or **subscriber** -- the services offered by that node, its Linux process identifier (PID), and a summary of the connections it has made to other nodes.
 
@@ -116,6 +125,7 @@ The Robotics Operating System is not an operating system in the way that Windows
    ```
    rosnode kill <node-name>
    ```
+   {: .bash}
 
    (Do not implement it now)
 
@@ -178,25 +188,30 @@ A catkin workspace can contain up to four different *spaces* which each serve a 
 Let's create and build a catkin workspace:
 
 ```
-$ mkdir -p ~/catkin_ws/src
-$ cd ~/catkin_ws/
-$ catkin_make
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
 ```
+{: .bash}
 
 Running it the first time in your workspace, it will create a `CMakeLists.txt` link in your 'src' folder. Additionally, if you look in your current directory you should now have a 'build' and 'devel' folder. Inside the 'devel' folder you can see that there are now several setup.*sh files. Sourcing any of these files will overlay this workspace on top of your environment. 
 
 Now source your new setup.*sh file:
 
 ```
-$ source devel/setup.bash
+source devel/setup.bash
 ```
+{: .bash}
 
 To make sure your workspace is properly overlaid by the setup script, make sure `ROS_PACKAGE_PATH` environment variable includes the directory you're in.
 
 ```
-$ echo $ROS_PACKAGE_PATH
+echo $ROS_PACKAGE_PATH
+```
+{: .bash}
+
+```
 /home/<youruser>/catkin_ws/src:/opt/ros/kinetic/share
 ```
-
-
+{: .output}
 
