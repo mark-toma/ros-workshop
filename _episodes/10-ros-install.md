@@ -19,6 +19,7 @@ Installing ROS [fetched from ROS Wiki on xx/xx/xxxx](http://wiki.ros.org/).
    ```
    sudo sh -c 'echo"deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" >/etc/apt/sources.list.d/ros-latest.list'
    ```
+   {: .bash}
 
    Mirrors: 
 
@@ -28,6 +29,7 @@ Installing ROS [fetched from ROS Wiki on xx/xx/xxxx](http://wiki.ros.org/).
    ```
    sudo apt-key adv--keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key421C365BD9FF1F717815A3895523BAEEB01FA116
    ```
+   {: .bash}
 
    If you experienceissues connecting to the keyserver, you can try substituting `hkp://pgp.mit.edu:80` or `hkp://keyserver.ubuntu.com:80` in the previous command.
 
@@ -38,12 +40,14 @@ Installing ROS [fetched from ROS Wiki on xx/xx/xxxx](http://wiki.ros.org/).
    ```
    sudo apt-get update
    ```
+   {: .bash}
 
    Desktop-Full Install:
 
    ```
    sudo apt-get install ros-kinetic-desktop-full
    ```
+   {: .bash}
 
 4. Initialize `rosdep`
 
@@ -53,6 +57,7 @@ Installing ROS [fetched from ROS Wiki on xx/xx/xxxx](http://wiki.ros.org/).
    sudo rosdep init
    rosdep update
    ```
+   {: .bash}
 
 5. Environment setup
 
@@ -62,6 +67,7 @@ Installing ROS [fetched from ROS Wiki on xx/xx/xxxx](http://wiki.ros.org/).
    echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
    source ~/.bashrc
    ```
+   {: .bash}
 
    You can then confirm that the environment variables are set correctly using a command
    like this:
@@ -69,6 +75,7 @@ Installing ROS [fetched from ROS Wiki on xx/xx/xxxx](http://wiki.ros.org/).
    ```
    export | grep ROS
    ```
+   {: .bash}
 
    If everything has worked correctly, you should see a handful of values (showing values for
    environment variables like `ROS_DISTRO` and `ROS_PACKAGE_PATH`) as the output
@@ -84,3 +91,4 @@ Installing ROS [fetched from ROS Wiki on xx/xx/xxxx](http://wiki.ros.org/).
    ```
    sudo apt-get install python-rosinstall python-rosinstall-generator python-wstool build-essential
    ```
+   {: .bash}
